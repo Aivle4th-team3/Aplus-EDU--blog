@@ -17,17 +17,17 @@
     --archive_font: #000;
     --archive_title: #46a891;
     --archive_title_hover: #87CDBD;
-    --name_font: #FFAA00;
+    --name_font: #2F3437;
     --job_font: #003845;
-    --nav_font: #8d7edc;
-    --nav_font_hover: #D4CEF2;
+    --nav_font: #858585;
+    --nav_font_hover: #2F3437;
     --shadow_color: rgba(160, 160, 160, 0.05);
     --post_title: #003845;
     --post_date: #003845;
     --post_text: #4c4c4c;
     --post_h3: #4c4c4c;
-    --post_link: #46a891;
-    --post_link_hover: #87CDBD;
+    --post_link: #0056b2;
+    --post_link_hover: #000;
     --inlinecode_text: #FFAA00;
     --blockquote: #333;
     --footer_font: #858585;
@@ -43,7 +43,7 @@
     --archive_font: #CACCCE;
     --archive_title: #46a891;
     --archive_title_hover: #87CDBD;
-    --name_font: #FFAA00;
+    --name_font: #fff;
     --job_font: #CACCCE;
     --nav_font: #8d7edc;
     --nav_font_hover: #D4CEF2;
@@ -52,8 +52,8 @@
     --post_date: #e9ead7;
     --post_text: #CACCCE;
     --post_h3: #fff;
-    --post_link: #8d7edc;
-    --post_link_hover: #D4CEF2;
+    --post_link: rgb(88, 116, 253);
+    --post_link_hover: #FFF;
     --inlinecode_text: #FFAA00;
     --blockquote: #CACCCE;
     --footer_font_a: #d1d1d1;
@@ -166,6 +166,7 @@ img {
 
     @include breakpoint(medium) {
         margin-left: 22rem;
+        margin-right: 2rem;
     }
 }
 
@@ -304,8 +305,9 @@ img {
 }
 
 .header_content {
-    position: absolute;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include breakpoint(medium) {
         margin-top: 8rem;
@@ -319,20 +321,23 @@ img {
 }
 
 .header_circle {
+    display: block;
     border: none;
     box-sizing: border-box;
     height: 7rem;
     width: 7rem;
+    margin: 1rem;
     border-radius: 50%;
+    box-shadow: #f4f4f4 0 0 0 2px;
+    overflow: hidden;
 
     img {
-        @extend .header_circle;
-    }
-
-    &:hover {
-        cursor: pointer;
-        animation: jiggle 2s ease-in-out infinite;
-    }
+        transition: transform 0.5s;
+  
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
 
     @include mobile-only {
         bottom: 0;
@@ -425,11 +430,6 @@ img {
     }
 }
 
-.button {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .nav {
     margin-top: 1rem;
 
@@ -452,6 +452,7 @@ img {
     display: inline-block;
     *display: inline;
     zoom: 1;
+    line-height: 2.5rem;
 
     & a {
         color: var(--nav_font);
@@ -523,7 +524,6 @@ img {
     color: var(--post_text);
 
     @include breakpoint(medium) {
-        max-width: 33rem;
         margin-top: 5rem;
     }
 
@@ -603,6 +603,7 @@ img {
 
     a {
         color: var(--post_link);
+        font-weight: 100;
 
         &:hover,
         &:focus {
