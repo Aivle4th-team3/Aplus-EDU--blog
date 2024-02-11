@@ -356,6 +356,27 @@ img {
     font-weight: 700;
 }
 
+.header_controller {
+    display: flex;
+    margin: 1em;
+    justify-content: space-between;
+}
+
+.go_github {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+}
+.light .go_github {
+    background: url('../img/light_github.png');
+    background-size: cover;
+}
+.dark .go_github {
+    background: url('../img/dark_github.png');
+    background-size: cover;
+}
+
 .theme_changer {   
     cursor: pointer;
     input {

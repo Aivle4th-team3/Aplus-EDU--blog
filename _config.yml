@@ -6,6 +6,7 @@ description: > # this means to ignore newlines until "baseurl"
 
 baseurl: /Aplus-EDU # the subpath of the site
 url: https://aivle4-team3.github.io/Aplus-EDU/ # the base hostname & protocol for your site
+repository_url: https://github.com/Aivle4-Team3/Aplus-EDU
 
 permalink: /:year-:month/:title
 timezone: Asia/Seoul

@@ -1,10 +1,12 @@
 <header class="header">
-
-  <div class="header_content">
-    <label class="theme_changer">
+  <div class="header_controller">
+    <label title="Dark mode" class="theme_changer">
       <input theme_toggle type="checkbox">
       <div class="button"></div>
     </label>
+    <a href="{{ site.repository_url }}" title="Repository" class="go_github"></a>
+  </div>
+  <div class="header_content">
     <a class="header_circle" href="{{ '/' | relative_url }}">
       <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
     </a>
