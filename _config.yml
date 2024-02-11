@@ -1,16 +1,14 @@
 
-title: Catbook #Your awesome title
+title: A+EDU Blog #Your awesome title
 email: #youremail@domain.com
 description: > # this means to ignore newlines until "baseurl"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Aplus-EDU 개발 과정의 세부 구현에 대한 포스트 정리
 
-baseurl: # the subpath of the site
-url: http://starry99.github.io/catbook # the base hostname & protocol for your site
+baseurl: /Aplus-EDU # the subpath of the site
+url: https://aivle4-team3.github.io/Aplus-EDU/ # the base hostname & protocol for your site
 
 permalink: /:year-:month/:title
-timezone:
+timezone: Asia/Seoul
 
 favicon: /assets/img/favicon.ico
 
@@ -18,10 +16,10 @@ google_analytics: #UA—XXXXXXXX-X
 disqus_shortname: #disqus shortname
 
 user:
-  name: Catbook
-  pic: /assets/img/cat.jpg
-  picAlt: "catbook"
-  job: a category-centric theme
+  name: A+EDU Blog
+  pic: /assets/img/EDU.png
+  picAlt: "A+EDU"
+  job:
   aboutme: true # comment this out if you don't need the 'about' page.
 
 exclude:
