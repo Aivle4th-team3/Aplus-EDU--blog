@@ -1,0 +1,51 @@
+#topbar {
+    button i {
+        color: #999999;
+    }
+
+    #breadcrumb {
+        font-size: 1rem;
+        color: var(--text-muted-color);
+        padding-left: 0.5rem;
+
+        span {
+            &:not(:last-child) {
+                &::after {
+                    content: "›";
+                    padding: 0 0.3rem;
+                }
+            }
+        }
+    }
+} /* #topbar */
+
+search {
+    --search-border-color: rgb(240, 240, 240);
+    --search-icon-color: #c2c6cc;
+
+    display: flex;
+    border-radius: 1rem;
+    border: 1px solid var(--search-border-color);
+    background: var(--main-bg);
+    padding: 0 0.5rem;
+
+    i {
+        z-index: 2;
+        font-size: 0.9rem;
+        color: var(--search-icon-color);
+    }
+}
+#search-input {
+    --text-color: #34343c;
+
+    background: center;
+    border: 0;
+    border-radius: 0;
+    padding: 0.18rem 0.3rem;
+    color: var(--text-color);
+    height: auto;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
