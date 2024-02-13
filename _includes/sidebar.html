@@ -1,0 +1,36 @@
+<aside class="sidebar">
+  <div class="sidebar_controller">
+    <label title="Dark mode" class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a href="{{ site.repository_url }}" title="Repository" class="go_github"></a>
+  </div>
+  <div class="sidebar_content">
+    <a class="sidebar_circle" href="{{ '/' | relative_url }}">
+      <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
+    </a>
+    <span class="sidebar_name">{{ site.user.name }}</span>
+    <span class="sidebar_job">{{ site.user.job }}</span>
+    <span class="sidebar_mes">{{ site.user.message }}</span>
+
+    <nav class="nav">
+      <ul class="nav_list">
+        {% assign sorted_tabs = site.tabs | sort: 'order' %}
+        {% for tab in sorted_tabs %}
+          <li class="nav_item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+            <a href="{{ tab.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ tab.icon }}"></i>
+              {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+              <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+            </a>
+          </li>
+          <!-- .nav-item -->
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+</aside>
+

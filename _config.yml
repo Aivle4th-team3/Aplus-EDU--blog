@@ -21,7 +21,6 @@ user:
   pic: /assets/img/EDU.png
   picAlt: "A+EDU"
   job:
-  aboutme: true # comment this out if you don't need the 'about' page.
 
 exclude:
   - README.md
@@ -35,6 +34,11 @@ defaults:
     values:
       layout: post
       comment: true   
+
+collections:
+  tabs:
+    output: true
+    permalink: /:name/
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown 
@@ -54,3 +58,13 @@ show_drafts: null
 limit_posts: 0
 future:      false
 unpublished: false
+
+plugins:
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: [categories]
+  layouts:
+    category: category
+  permalinks:
+    category: "/categories/:name/"

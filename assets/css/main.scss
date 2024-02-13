@@ -1,10 +1,11 @@
 --- 
-# do not remove 
 --- 
 
 @import 'normalize';
 @import 'code_style';
 @import 'flexible';
+@import 'layout/categories';
+@import 'layout/category-tag';
 
 
 /* 0. Variables
@@ -12,7 +13,7 @@
 
 @mixin lightMode {
     --bg_color: #eee;
-    --header_bg: #fafafa;
+    --sidebar_bg: #fafafa;
     --content_bg: #fff;
     --archive_font: #000;
     --archive_title: #46a891;
@@ -38,7 +39,7 @@
 
 @mixin darkMode {
     --bg_color: #1C1C1E;
-    --header_bg: #24292E;
+    --sidebar_bg: #24292E;
     --content_bg: #2F3437;
     --archive_font: #CACCCE;
     --archive_title: #46a891;
@@ -137,6 +138,10 @@ img {
     margin-right: auto;
 }
 
+body > .content {
+    box-shadow: 0 0 2px 2px var(--shadow_color);
+}
+
 .content {
     margin: 1.4em auto;
     z-index: 0;
@@ -145,7 +150,6 @@ img {
     max-width: 92%;
     min-height: 85%;
     border-radius: 15px;
-    box-shadow: 0 0 2px 2px var(--shadow_color);
     padding-bottom: 2rem;
 
     @include breakpoint(medium) {
@@ -283,8 +287,8 @@ img {
 /* 3. Header
    ========================================================================== */
 
-.header {
-    background-color: var(--header_bg);
+.sidebar {
+    background-color: var(--sidebar_bg);
     z-index: 1;
     position: absolute;
     top: 0;
@@ -304,7 +308,7 @@ img {
 
 }
 
-.header_content {
+.sidebar_content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -320,7 +324,7 @@ img {
     }
 }
 
-.header_circle {
+.sidebar_circle {
     display: block;
     border: none;
     box-sizing: border-box;
@@ -347,13 +351,13 @@ img {
     }
 }
 
-.header_name {
+.sidebar_name {
     display: block;
     color: var(--name_font);
     font-size: 1.5em;
 }
 
-.header_job {
+.sidebar_job {
     display: block;
     margin-top: .1rem;
     color: var(--job_font);
@@ -361,7 +365,7 @@ img {
     font-weight: 700;
 }
 
-.header_controller {
+.sidebar_controller {
     display: flex;
     margin: 1em;
     justify-content: space-between;
@@ -449,7 +453,6 @@ img {
 }
 
 .nav_item {
-    display: inline-block;
     *display: inline;
     zoom: 1;
     line-height: 2.5rem;
