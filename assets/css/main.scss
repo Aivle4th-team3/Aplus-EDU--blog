@@ -5,6 +5,7 @@
 @import 'code_style';
 @import 'flexible';
 @import 'layout/topbar';
+@import 'layout/home';
 @import 'layout/categories';
 @import 'layout/category-tag';
 
@@ -139,11 +140,11 @@ img {
     margin-right: auto;
 }
 
-body > .content {
+body > .blog {
     box-shadow: 0 0 2px 2px var(--shadow_color);
 }
 
-.content {
+.blog {
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 50px 1fr;
@@ -310,7 +311,7 @@ body > .content {
 }
 
 #topbar-wrapper {
-    grid-column: 2 / 3; /* 두 번째 컬럼에 배치 */
+    grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
