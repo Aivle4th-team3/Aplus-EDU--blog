@@ -49,86 +49,82 @@ $base-radius: 0.625rem !default;
   }
 }
 
-#post-list {
-  margin-top: 2rem;
+.card-wrapper {
+  &:hover {
+    text-decoration: none;
+  }
 
-  .card-wrapper {
-    &:hover {
-      text-decoration: none;
-    }
+  &:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}
 
-    &:not(:last-child) {
-      margin-bottom: 1.25rem;
+.card {
+  border: 0;
+  background: none;
+
+  %img-radius {
+    border-radius: $base-radius $base-radius 0 0;
+  }
+
+  .preview-img {
+    @extend %img-radius;
+
+    img {
+      @extend %img-radius;
     }
   }
 
-  .card {
-    border: 0;
-    background: none;
+  .card-body {
+    height: 100%;
+    padding: 1rem;
 
-    %img-radius {
-      border-radius: $base-radius $base-radius 0 0;
+    .card-title {
+      @extend %text-clip;
+
+      color: var(--heading-color) !important;
+      font-size: 1.25rem;
     }
 
-    .preview-img {
-      @extend %img-radius;
-
-      img {
-        @extend %img-radius;
-      }
+    %muted {
+      color: var(--text-muted-color) !important;
     }
 
-    .card-body {
-      height: 100%;
-      padding: 1rem;
+    .card-text.content {
+      @extend %muted;
 
-      .card-title {
+      p {
         @extend %text-clip;
 
-        color: var(--heading-color) !important;
-        font-size: 1.25rem;
+        line-height: 1.5;
+        margin: 0;
       }
+    }
 
-      %muted {
-        color: var(--text-muted-color) !important;
-      }
+    .post-meta {
+      @extend %muted;
 
-      .card-text.content {
-        @extend %muted;
-
-        p {
-          @extend %text-clip;
-
-          line-height: 1.5;
-          margin: 0;
+      i {
+        &:not(:first-child) {
+          margin-left: 1.5rem;
         }
       }
 
-      .post-meta {
-        @extend %muted;
+      em {
+        font-style: normal;
 
-        i {
-          &:not(:first-child) {
-            margin-left: 1.5rem;
-          }
-        }
+        color: inherit;
+      }
 
-        em {
-          font-style: normal;
-
-          color: inherit;
-        }
-
-        > div:first-child {
-          display: block;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      > div:first-child {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
-} /* #post-list */
+}
 
 .pagination {
   color: var(--text-color);
@@ -181,7 +177,6 @@ $base-radius: 0.625rem !default;
     border-radius: 0 $base-radius $base-radius 0;
   }
 
-  #post-list {
     .card {
       .card-body {
         padding: 1.75rem 1.75rem 1.25rem 1.75rem;
@@ -199,7 +194,6 @@ $base-radius: 0.625rem !default;
         }
       }
     }
-  }
 }
 
 /* Hide SideBar and TOC */
