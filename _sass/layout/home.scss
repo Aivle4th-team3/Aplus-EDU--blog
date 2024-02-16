@@ -209,9 +209,6 @@ $base-radius: 0.625rem !default;
 
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
-  #post-list {
-    margin-top: 2.5rem;
-  }
 
   .pagination {
     font-size: 0.85rem;
