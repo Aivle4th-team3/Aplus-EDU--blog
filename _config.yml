@@ -67,4 +67,4 @@ jekyll-archives:
   layouts:
     category: category
   permalinks:
-    category: "/categories/:name/"
+    category: /categories/:name/

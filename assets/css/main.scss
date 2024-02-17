@@ -485,12 +485,14 @@ body > .blog {
 .nav_list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     margin: 0 20px;
     padding: 0;
     list-style: none;
 
     @include mobile-only {
         text-align: center;
+        flex-direction: row;
     }
 }
 

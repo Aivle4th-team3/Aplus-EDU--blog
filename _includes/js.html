@@ -6,7 +6,7 @@
         let supports = false;
         let theme = undefined;
 
-        if (hasLocalStorage === 'light') {
+        if (!hasLocalStorage || hasLocalStorage === 'light') {
             theme = 'light';
         }
         if (hasLocalStorage === 'dark') {
