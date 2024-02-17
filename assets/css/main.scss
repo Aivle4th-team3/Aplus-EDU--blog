@@ -148,8 +148,6 @@ body > .blog {
 
 .blog {
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 100px 1fr;
     margin: 1.4em auto;
     z-index: 0;
     background: var(--content_bg);
@@ -159,20 +157,31 @@ body > .blog {
     border-radius: 15px;
 
     @include breakpoint(medium) {
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 100px 1fr;
+
         margin-left: auto;
         margin-right: auto;
         max-width: 960px;
     }
 
     @include mobile-only {
-        padding-top: 16rem;
-        min-height: 100%;
+        grid-template-rows: 3rem auto auto 1fr;
+
+        min-height: 75%;
+        max-width: 92%;
     }
 }
 
 .main {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    @include breakpoint(medium) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    @include mobile-only {
+        grid-row: 4 / 5;
+    }
     padding: 0.5rem;
 
     margin: 10px;
@@ -292,8 +301,15 @@ body > .blog {
    ========================================================================== */
 
 .controlbar {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    @include breakpoint(medium) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    @include mobile-only {
+        grid-row: 1 / 2;
+    }
+
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -302,8 +318,15 @@ body > .blog {
 }
 
 .sidebar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    @include breakpoint(medium) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    @include mobile-only {
+        grid-row: 2 / 3;
+    }
+
     background-color: var(--sidebar_bg);
     z-index: 1;
     display: flex;
@@ -311,7 +334,7 @@ body > .blog {
     border-radius: 0 0 0 var(--border_radius);
 
     @include mobile-only {
-        height: 9rem;
+        width: 100%;
     }
 
     @include breakpoint(medium) {
@@ -322,23 +345,26 @@ body > .blog {
 }
 
 #topbar-wrapper {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    width: 100%;
+
+    @include breakpoint(medium) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        padding-bottom: 2.5rem;
+    }
+    
+    @include mobile-only {
+        grid-row: 1 / 2;
+        position: absolute;
+        padding-top: 1rem;
+    }
 }
 
 .sidebar_content {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @include breakpoint(medium) {
-        width: 100%;
-    }
-
-    @include mobile-only {
-        margin-top: 3rem;
-        width: 100%;
-    }
+    width: 100%;
 }
 
 .sidebar_circle {
@@ -372,6 +398,9 @@ body > .blog {
     display: block;
     color: var(--name_font);
     font-size: 1.5em;
+    @include mobile-only {
+        display: none;
+    }
 }
 
 .sidebar_job {
@@ -454,7 +483,9 @@ body > .blog {
 }
 
 .nav_list {
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
     padding: 0;
     list-style: none;
 
@@ -500,8 +531,8 @@ body > .blog {
     display: none;
 
     @include mobile-only {
+        grid-row: 3 / 4;
         display: block;
-        margin: -.5rem;
     }
 
     @include breakpoint(medium) {

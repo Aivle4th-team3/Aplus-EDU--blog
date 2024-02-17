@@ -1,8 +1,9 @@
 #topbar {
-    padding-bottom: 2.5rem;
-
     button i {
         color: #999999;
+    }
+    @include mobile-only {
+        justify-content: center !important;
     }
 
     #breadcrumb {
@@ -10,6 +11,10 @@
         color: var(--text-muted-color);
         padding-left: 0.5rem;
 
+
+        @include mobile-only {
+            display: none;
+        }
         span {
             &:not(:last-child) {
                 &::after {
