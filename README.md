@@ -1,7 +1,7 @@
 # gh-pages용 블로그 레포지토리
 
-> 블로그 사이트: [github.io/Aplus-Edu](https://Aivle4-Team3.github.io/Aplus-EDU)  
-> 빌드 저장소: [Aivle4-Team3/Aplus-EDU](https://github.com/Aivle4-Team3/Aplus-EDU/tree/gh-pages)
+> 블로그 사이트: [github.io/Aplus-Edu](https://Aivle4th-team3.github.io/Aplus-EDU)  
+> 빌드 저장소: [Aivle4th-team3/Aplus-EDU](https://github.com/Aivle4th-team3/Aplus-EDU/tree/gh-pages)
 
 ## 포스트 추가 방법
 
@@ -65,13 +65,13 @@
 
 ## 서버 빌드 방법
 
-[.github/workflows/jekyll.yml](https://github.com/Aivle4-Team3/blog/blob/master/.github/workflows/jekyll.yml)로 깃헙 레포지토리에 workflow가 적용되어 자동 수행된다.
+[.github/workflows/jekyll.yml](https://github.com/Aivle4th-team3/blog/blob/master/.github/workflows/jekyll.yml)로 깃헙 레포지토리에 workflow가 적용되어 자동 수행된다.
 
 1. 현재 깃헙 레포지토리로 push한다.
 
 -   빌드 없이 푸쉬 하려면 커밋 메시지에 [skip ci]를 적는다. [참고](https://docs.github.com/ko/actions/managing-workflow-runs/skipping-workflow-runs)
 
-2. 워크플로어가 깃헙 레포지토리에서 수동으로 빌드하고 원격 레포지토리([Aivle4-Team3/Aplus-EDU](https://github.com/Aivle4-Team3/Aplus-EDU/tree/gh-pages))의 gh-pages 브랜치에 결과물(\_site)을 푸쉬한다.
+2. 워크플로어가 깃헙 레포지토리에서 수동으로 빌드하고 원격 레포지토리([Aivle4th-team3/Aplus-EDU](https://github.com/Aivle4th-team3/Aplus-EDU/tree/gh-pages))의 gh-pages 브랜치에 결과물(\_site)을 푸쉬한다.
 
 3. 원격 레포지토리에서는 gh-pages 브랜치에 푸쉬를 받으면 자동 빌드하여 블로그를 구성한다.
 

@@ -31,16 +31,16 @@ view에서 render함수를 이용해 정적인 html과 컨텍스트를 보내 �
 ### {% load static %}
 
 load 태그는 템플릿 최상단에 위치해야 하며 탬플릿 태그나 자원들을 가져오기 사용된다.  
-load static은 django.contrib.staticfiles 앱으로 작동한다. [settings.py L56](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/config/settings.py#L56)  
-지정된 STATIC_URL의 경로에 이어 정적 파일들을 url로 생성하게 된다. [L269](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/config/settings.py#L269)  
+load static은 django.contrib.staticfiles 앱으로 작동한다. [settings.py L56](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/config/settings.py#L56)  
+지정된 STATIC_URL의 경로에 이어 정적 파일들을 url로 생성하게 된다. [L269](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/config/settings.py#L269)  
 정적 파일들은 배포 시에는 CDN등을 통해 따로 제공되는 경우가 생기는데 이 때 static 태그를 통해 자동으로 처리하게 된다.
 
 ### {% extends %}
 
 템플릿을 상속하게 만들어 주는 태그를 통해 HTML 파일을 계층화할 수 있다.
 
-자식 템플릿에서는 extends 태그를 통해 부모 템플릿을 지정하게 되며, [home/layout.html L1](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/templates/home/layout.html#L1)  
-부모 템플릿에서는 block 태그를 통해 자식 템플릿에서 재정의 할 수 있는 공간을 지정해 둔다. [base.html L55-57](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/templates/home/base.py#L55-L57)
+자식 템플릿에서는 extends 태그를 통해 부모 템플릿을 지정하게 되며, [home/layout.html L1](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/templates/home/layout.html#L1)  
+부모 템플릿에서는 block 태그를 통해 자식 템플릿에서 재정의 할 수 있는 공간을 지정해 둔다. [base.html L55-57](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/templates/home/base.py#L55-L57)
 
 ```html
 <!-- 부모 템플릿-->
@@ -54,18 +54,18 @@ load static은 django.contrib.staticfiles 앱으로 작동한다. [settings.py L
 
 ### {% include %}
 
-include 태그는 다른 템플릿을 포함하게 된다. [layout.html L16, L23](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/templates/home/layout.html#L16)  
+include 태그는 다른 템플릿을 포함하게 된다. [layout.html L16, L23](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/templates/home/layout.html#L16)  
 이 때 호출되는 템플릿은 호출하는 템플릿의 컨텍스트를 받게 된다.
 
 ### 커스텀 태그
 
 커스텀 태그는 템플릿 태그 기능의 확장이다.  
-앱 내에서 templatetags 폴더를 만들고 태그를 포함할 모듈 파일을 생성한다. [templatetags/url_utils.py](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py)  
-django.template.Library의 인스턴스를 가지고 simple_tag 데코레이터로 사용하여 구현한 함수를 태그로 등록한다. [L4-6](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py#L4-L6)  
-입력값과 현재 템플릿의 컨텍스트를 이용할 수 있어 추가 기능을 사용할 수 있게 된다. [L7](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py#L7)
+앱 내에서 templatetags 폴더를 만들고 태그를 포함할 모듈 파일을 생성한다. [templatetags/url_utils.py](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py)  
+django.template.Library의 인스턴스를 가지고 simple_tag 데코레이터로 사용하여 구현한 함수를 태그로 등록한다. [L4-6](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py#L4-L6)  
+입력값과 현재 템플릿의 컨텍스트를 이용할 수 있어 추가 기능을 사용할 수 있게 된다. [L7](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/board/templatetags/url_utils.py#L7)
 
-템플릿에서는 load 태그를 통해 태그 모듈을 호출한다. [board.html L3](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/templates/board/board.html#L3)  
-사용시에는 모듈 내 구현된 태그명을 이용한다. [L39](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/templates/board/board.html#L39)  
+템플릿에서는 load 태그를 통해 태그 모듈을 호출한다. [board.html L3](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/templates/board/board.html#L3)  
+사용시에는 모듈 내 구현된 태그명을 이용한다. [L39](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/templates/board/board.html#L39)  
 함수 호출 표현식을 사용하여 첫번째 값이 태그이며 다음 값들이 인수가 된다.  
 `{% current_url 'create' %}`
 

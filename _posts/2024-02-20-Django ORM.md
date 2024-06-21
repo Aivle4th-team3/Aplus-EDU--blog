@@ -57,7 +57,7 @@ class Lecture(models.Model):
     users = models.ManyToManyField(User, through="Enrollment", related_name="lectures")
 ```
 
-[lecture/models.py L20](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/lecture/models.py#L20)
+[lecture/models.py L20](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/lecture/models.py#L20)
 
 User와 Lecture의 관계는 다대다 관계이며 Lecture에서 ManyToManyField로 User를 연결해주었다.  
 관계 테이블에 추가 필드를 주기 위해 직접 구현하여 Enrollment 모델을 생성해주었고 through를 통해 연결해주었다.
@@ -67,7 +67,7 @@ Enrollment는 (user, lecture)를 유니크키로써 가지려면 Meta에 unique_
 
 ### get_absolute_url
 
-get_absolute_url는 해당 모델 인스턴스의 url을 표현해주는 함수이다. [board/models.py L21-23](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/board/models.py#L21-23)  
+get_absolute_url는 해당 모델 인스턴스의 url을 표현해주는 함수이다. [board/models.py L21-23](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/board/models.py#L21-23)  
 이 함수의 내부 구현을 채우면 뷰나 템플릿에서 객체를 참조할 때 url을 얻을 수 있다.  
-뷰에서 `redirect(post)`이나 [board/views.py L62](https://github.com/Aivle4-Team3/Aplus-EDU/blob/main/board/views.py#L62)  
+뷰에서 `redirect(post)`이나 [board/views.py L62](https://github.com/Aivle4th-team3/Aplus-EDU/blob/main/board/views.py#L62)  
 템플릿에서 `<a href="{{ post.get_absolute_url }}"/>` 형태로 사용할 수 있다.
